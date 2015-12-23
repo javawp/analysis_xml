@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CentralBank>
+	<MessageHeader>
+		<ReportSN>报告编号</ReportSN>
+		<QueryTime>查询请求时间</QueryTime>
+		<ReportCreateTime>报告时间</ReportCreateTime>
+	</MessageHeader><!--报告头描述 -->
+	<QueryReq>
+		<ProductType>产品种类</ProductType>
+		<Format>产品版式</Format>
+		<FormatVersion>产品版本</FormatVersion>
+		<Name>被查询者姓名</Name>
+		<Certtype>被查询者证件类型</Certtype>
+		<Certno>被查询者证件号码</Certno>
+		<QueryResultCue>查询结果提示</QueryResultCue>
+	</QueryReq><!--查询请求信息 -->
+	<IDENTITY>
+		<Gender>性别</Gender>
+		<Birthday>出生日期</Birthday>
+		<MaritalState>婚姻状况</MaritalState>
+		<Mobile>手机号码</Mobile>
+		<OfficeTelephoneNo>单位电话</OfficeTelephoneNo>
+		<HomeTelephoneNo>住宅电话</HomeTelephoneNo>
+		<EduLevel>学历</EduLevel>
+		<EduDegree>学位</EduDegree>
+		<PostAddress>通讯地址</PostAddress>
+		<RegisteredAddress>户籍地址</RegisteredAddress>
+	</IDENTITY><!--身份信息段 -->
+	<MATE>
+		<Name>姓名</Name>
+		<Certtype>证件类型</Certtype>
+		<Certno>证件号码</Certno>
+		<Employer>工作单位</Employer>
+		<TelephoneNo>联系电话</TelephoneNo>
+	</MATE><!--配偶信息段 -->
+	<RESIDENCE>
+		<Address>居住地址</Address>
+		<ResidenceType>居住状况</ResidenceType>
+		<GetTime>信息更新日期 </GetTime>
+	</RESIDENCE><!--居住地址信息段 -->
+	<PROFESSIONAL>
+		<Employer>工作单位</Employer>
+		<EmployerAddress>单位地址</EmployerAddress>
+		<Occupation>职业</Occupation>
+		<Industry>行业</Industry>
+		<Duty>职务</Duty>
+		<Title>职称</Title>
+		<StartYear>进入本单位年份</StartYear>
+		<GetTime>信息更新日期 </GetTime>
+	</PROFESSIONAL><!--职业信息段 -->
+	<CreditSummaryCue>
+		<PerHouseLoanCount>住房贷款笔数</PerHouseLoanCount>
+		<PerBusinessHouseLoanCount>个人商用房（包括商住两用）贷款笔数
+		</PerBusinessHouseLoanCount>
+		<OtherLoanCount>其他贷款笔数</OtherLoanCount>
+		<FirstLoanOpenMonth>首笔贷款发放月份 </FirstLoanOpenMonth>
+		<LoancardCount>贷记卡账户数</LoancardCount>
+		<FirstLoancardOpenMonth>首张贷记卡发卡月份 </FirstLoancardOpenMonth>
+		<StandardLoancardCount>准贷记卡账户数</StandardLoancardCount>
+		<FirstStandardLoancardOpenMonth>首张准贷记卡发卡月份
+		</FirstStandardLoancardOpenMonth>
+		<AnnounceCount>本人声明数目</AnnounceCount>
+		<DissentCount>异议标注数目</DissentCount>
+	</CreditSummaryCue><!-- 信用汇总提示段 -->
+	<CreditScore>
+		<Score>数字解读</Score>
+		<ScoreLevel>相对位置</ScoreLevel>
+		<ScoreElements>
+			<ScoreEle>说明内容</ScoreEle>
+		</ScoreElements><!--说明 -->
+	</CreditScore><!--个人信用报告“数字解读” -->
+	<OverdueAndFellback>
+		<FellbackSummary>
+			<FellbackDebtSum>
+				<Count>笔数</Count>
+				<Balance>余额</Balance>
+			</FellbackDebtSum><!-- 呆帐信息汇总 -->
+			<AssetDispositionSum>
+				<Count>笔数</Count>
+				<Balance>余额</Balance>
+			</AssetDispositionSum><!-- 资产处置信息汇总 -->
+			<AssureerRepaySum>
+				<Count>笔数</Count>
+				<Balance>余额</Balance>
+			</AssureerRepaySum><!-- 保证人代偿汇总 -->
+		</FellbackSummary><!-- 违约信息汇总 -->
+		<OverdueSummary>
+			<LoanSum>
+				<Count>笔数/账户数</Count>
+				<Months>月份数</Months>
+				<HighestOverdueAmountPerMon>单月最高逾期总额/单月最高透支总额
+				</HighestOverdueAmountPerMon>
+				<MaxDuration>最长逾期月数/最长透支月数</MaxDuration>
+			</LoanSum><!-- 贷款逾期 -->
+			<LoancardSum>
+				<Count>笔数/账户数</Count>
+				<Months>月份数</Months>
+				<HighestOverdueAmountPerMon>单月最高逾期总额/单月最高透支总额
+				</HighestOverdueAmountPerMon>
+				<MaxDuration>最长逾期月数/最长透支月数</MaxDuration>
+			</LoancardSum><!-- 贷记卡逾期 -->
+			<StandardLoancardSum>
+				<Count>笔数/账户数</Count>
+				<Months>月份数</Months>
+				<HighestOverdueAmountPerMon>单月最高逾期总额/单月最高透支总额
+				</HighestOverdueAmountPerMon>
+				<MaxDuration>最长逾期月数/最长透支月数</MaxDuration>
+			</StandardLoancardSum><!-- 准贷记卡60天以上透支 -->
+		</OverdueSummary><!--逾期(透支)信息汇总 -->
+	</OverdueAndFellback><!--逾期及违约信息概要 -->
+	<ShareAndDebt>
+		<UnpaidLoan>
+			<FinanceCorpCount>贷款法人机构数/发卡法人机构数</FinanceCorpCount>
+			<FinanceOrgCount>贷款机构数/发卡机构数</FinanceOrgCount>
+			<AccountCount>笔数/账户数</AccountCount>
+			<CreditLimit>合同金额/授信总额</CreditLimit>
+			<MaxCreditLimitPerOrg>单家行最高授信额度</MaxCreditLimitPerOrg>
+			<MinCreditLimitPerOrg>单家行最低授信额度</MinCreditLimitPerOrg>
+			<Balance>余额</Balance>
+			<UsedCreditLimit>已用额度/透支余额</UsedCreditLimit>
+			<Latest6MonthUsedAvgAmount>
+				最近6个月平均应还款/最近6个月平均使用额度/最近6个月平均透支余额
+			</Latest6MonthUsedAvgAmount>
+		</UnpaidLoan><!-- 未结清贷款信息汇总 -->
+		<UndestoryLoancard>
+			<FinanceCorpCount>贷款法人机构数/发卡法人机构数</FinanceCorpCount>
+			<FinanceOrgCount>贷款机构数/发卡机构数</FinanceOrgCount>
+			<AccountCount>笔数/账户数</AccountCount>
+			<CreditLimit>合同金额/授信总额</CreditLimit>
+			<MaxCreditLimitPerOrg>单家行最高授信额度</MaxCreditLimitPerOrg>
+			<MinCreditLimitPerOrg>单家行最低授信额度</MinCreditLimitPerOrg>
+			<Balance>余额</Balance>
+			<UsedCreditLimit>已用额度/透支余额</UsedCreditLimit>
+			<Latest6MonthUsedAvgAmount>
+				最近6个月平均应还款/最近6个月平均使用额度/最近6个月平均透支余额
+			</Latest6MonthUsedAvgAmount>
+		</UndestoryLoancard><!-- 未销户贷记卡信息汇总 -->
+		<UndestoryStandardLoancard>
+			<FinanceCorpCount>贷款法人机构数/发卡法人机构数</FinanceCorpCount>
+			<FinanceOrgCount>贷款机构数/发卡机构数</FinanceOrgCount>
+			<AccountCount>笔数/账户数</AccountCount>
+			<CreditLimit>合同金额/授信总额</CreditLimit>
+			<MaxCreditLimitPerOrg>单家行最高授信额度</MaxCreditLimitPerOrg>
+			<MinCreditLimitPerOrg>单家行最低授信额度</MinCreditLimitPerOrg>
+			<Balance>余额</Balance>
+			<UsedCreditLimit>已用额度/透支余额</UsedCreditLimit>
+			<Latest6MonthUsedAvgAmount>
+				最近6个月平均应还款/最近6个月平均使用额度/最近6个月平均透支余额
+			</Latest6MonthUsedAvgAmount>
+		</UndestoryStandardLoancard><!-- 未销户准贷记卡信息汇总 -->
+		<GuaranteeSummary>
+			<Count>担保笔数</Count>
+			<Amount>担保金额</Amount>
+			<Balance>担保本金余额</Balance>
+		</GuaranteeSummary><!-- 对外担保信息汇总 -->
+	</ShareAndDebt><!--授信及负债信息概要 -->
+	<AssetDisposition>
+		<Organname>资产管理公司</Organname>
+		<ReceiveTime>债务接收日期</ReceiveTime>
+		<Money>接收的债务金额</Money>
+		<LatestRepayDate>最近一次还款日期</LatestRepayDate>
+		<Balance>余额</Balance>
+	</AssetDisposition><!--资产处置信息 -->
+	<AssurerRepay>
+		<Organname>代偿机构</Organname>
+		<LatestAssurerRepayDate>最近一次代偿日期</LatestAssurerRepayDate>
+		<Money>累计代偿金额</Money>
+		<LatestRepayDate>最近一次还款日期</LatestRepayDate>
+		<Balance>余额</Balance>
+	</AssurerRepay><!--保证人代偿信息 -->
+	<Loan>
+		<Cue>基本信息提示</Cue>
+		<State>账户状态</State>
+		<ContractInfo>
+			<FinanceOrg>贷款机构</FinanceOrg>
+			<FinanceType>机构类型</FinanceType>
+			<Account>业务号</Account>
+			<Type>贷款种类细分</Type>
+			<Currency>币种</Currency>
+			<OpenDate>发放日期</OpenDate>
+			<EndDate>到期日期</EndDate>
+			<CreditLimitAmount>合同金额</CreditLimitAmount>
+			<GuaranteeType>担保方式</GuaranteeType>
+			<PaymentRating>还款频率</PaymentRating>
+			<PaymentCyc>还款期数</PaymentCyc>
+		</ContractInfo><!-- 贷款合同信息 -->
+		<CurrAccountInfo>
+			<StateEndDate>状态截止日</StateEndDate>
+			<StateEndMonth>状态截止月/转出月</StateEndMonth>
+			<Class5State>五级分类</Class5State>
+			<Balance>本金余额</Balance>
+			<RemainPaymentCyc>剩余还款期数</RemainPaymentCyc>
+			<ScheduledPaymentAmount>本月应还款</ScheduledPaymentAmount>
+			<ScheduledPaymentDate>应还款日</ScheduledPaymentDate>
+			<ActualPaymentAmount>本月实还款</ActualPaymentAmount>
+			<RecentPayDate>最近一次还款日期</RecentPayDate>
+		</CurrAccountInfo><!-- 当前账户信息 -->
+		<CurrOverdue>
+			<CurrOverdueCyc>当前逾期期数</CurrOverdueCyc>
+			<CurrOverdueAmount>当前逾期金额</CurrOverdueAmount>
+			<Overdue31To60Amount>逾期31-60天未归还贷款本金</Overdue31To60Amount>
+			<Overdue61To90Amount>逾期61-90天未归还贷款本金</Overdue61To90Amount>
+			<Overdue91To180Amount>逾期91-180天未归还贷款本金</Overdue91To180Amount>
+			<OverdueOver180Amount>逾期180天以上未归还贷款本金</OverdueOver180Amount>
+		</CurrOverdue><!-- 当前逾期信息 -->
+		<Latest24MonthPaymentState>
+			<BeginMonth>起始月</BeginMonth>
+			<EndMonth>截止月</EndMonth>
+			<Latest24State>24个月还款状态</Latest24State>
+			<State>
+				<PayMonth>还款月</PayMonth>
+				<PayState>该月还款状态</PayState>
+			</State><!--还款记录明细 -->
+		</Latest24MonthPaymentState><!--最近24个月还款状态 -->
+		<Latest5YearOverdueRecord>
+			<BeginMonth>起始月</BeginMonth>
+			<EndMonth>截止月</EndMonth>
+			<OverdueRecord>
+				<Month>月份</Month>
+				<LastMonths>持续月数</LastMonths>
+				<Amount>金额</Amount>
+			</OverdueRecord><!--逾期记录明细 -->
+		</Latest5YearOverdueRecord><!--最近5年内的逾期记录 -->
+		<SpecialTrade>
+			<Type>类型</Type>
+			<GetTime>发生日期</GetTime>
+			<ChangingMonths>变更月数</ChangingMonths>
+			<ChangingAmount>发生金额</ChangingAmount>
+			<Content>明细记录</Content>
+		</SpecialTrade><!--特殊交易信息 -->
+		<BankIlluminate>
+			<Content>机构说明</Content>
+			<GetTime>添加日期</GetTime>
+		</BankIlluminate><!--与该笔业务相关的贷款机构说明 -->
+		<DissentInfo>
+			<Content>标注内容</Content>
+			<GetTime>添加日期</GetTime>
+		</DissentInfo><!--异议标注 -->
+		<AnnounceInfo>
+			<Content>声明内容</Content>
+			<GetTime>添加日期</GetTime>
+		</AnnounceInfo><!--本人声明 -->
+	</Loan><!--贷款 -->
+	<Loancard>
+		<Cue>基本信息提示</Cue>
+		<State>账户状态</State>
+		<AwardCreditInfo>
+			<FinanceOrg>发卡机构</FinanceOrg>
+			<FinanceType>机构类型</FinanceType>
+			<Account>业务号</Account>
+			<Currency>币种</Currency>
+			<OpenDate>发卡日期</OpenDate>
+			<CreditLimitAmount>授信额度</CreditLimitAmount>
+			<GuaranteeType>担保方式</GuaranteeType>
+		</AwardCreditInfo><!--贷记卡授信情况 -->
+		<RepayInfo>
+			<StateEndDate>状态截止日</StateEndDate>
+			<StateEndMonth>状态截止月</StateEndMonth>
+			<ShareCreditLimitAmount>共享额度</ShareCreditLimitAmount>
+			<UsedCreditLimitAmount>已用额度/透支余额</UsedCreditLimitAmount>
+			<Latest6MonthUsedAvgAmount>最近6个月平均使用额度/最近6个月平均透支余额
+			</Latest6MonthUsedAvgAmount>
+			<UsedHighestAmount>最大使用额度/最大透支余额</UsedHighestAmount>
+			<ScheduledPaymentDate>账单日</ScheduledPaymentDate>
+			<ScheduledPaymentAmount>本月应还款</ScheduledPaymentAmount>
+			<ActualPaymentAmount>本月实还款</ActualPaymentAmount>
+			<RecentPayDate>最近一次还款日期</RecentPayDate>
+		</RepayInfo><!--使用/还款情况 -->
+		<CurrOverdue>
+			<CurrOverdueCyc>当前逾期期数</CurrOverdueCyc>
+			<CurrOverdueAmount>当前逾期金额</CurrOverdueAmount>
+			<Overdue31To60Amount>逾期31-60天未归还贷款本金</Overdue31To60Amount>
+			<Overdue61To90Amount>逾期61-90天未归还贷款本金</Overdue61To90Amount>
+			<Overdue91To180Amount>逾期91-180天未归还贷款本金</Overdue91To180Amount>
+			<OverdueOver180Amount>逾期180天以上未归还贷款本金</OverdueOver180Amount>
+		</CurrOverdue><!--当前逾期信息 -->
+		<Latest24MonthPaymentState>
+			<BeginMonth>起始月</BeginMonth>
+			<EndMonth>截止月</EndMonth>
+			<Latest24State>24个月还款状态</Latest24State>
+			<State>
+				<PayMonth>还款月</PayMonth>
+				<PayState>该月还款状态</PayState>
+			</State><!--还款记录明细 -->
+		</Latest24MonthPaymentState><!--最近24个月还款状态 -->
+		<Latest5YearOverdueRecord>
+			<BeginMonth>起始月</BeginMonth>
+			<EndMonth>截止月</EndMonth>
+			<OverdueRecord>
+				<Month>月份</Month>
+				<LastMonths>持续月数</LastMonths>
+				<Amount>金额</Amount>
+			</OverdueRecord><!--逾期记录明细 -->
+		</Latest5YearOverdueRecord><!--最近5年内的逾期记录 -->
+		<SpecialTrade>
+			<Type>类型</Type>
+			<GetTime>发生日期</GetTime>
+			<ChangingMonths>变更月数</ChangingMonths>
+			<ChangingAmount>发生金额</ChangingAmount>
+			<Content>明细记录</Content>
+		</SpecialTrade><!--特殊交易信息 -->
+		<BankIlluminate>
+			<Content>机构说明</Content>
+			<GetTime>添加日期</GetTime>
+		</BankIlluminate><!--与该笔业务相关的贷款机构说明 -->
+		<DissentInfo>
+			<Content>标注内容</Content>
+			<GetTime>添加日期</GetTime>
+		</DissentInfo><!--异议标注 -->
+		<AnnounceInfo>
+			<Content>声明内容</Content>
+			<GetTime>添加日期</GetTime>
+		</AnnounceInfo><!--本人声明 -->
+	</Loancard><!--贷记卡 -->
+	<StandardLoancard>
+		<Cue>基本信息提示</Cue>
+		<State>账户状态</State>
+		<AwardCreditInfo>
+			<FinanceOrg>发卡机构</FinanceOrg>
+			<FinanceType>机构类型</FinanceType>
+			<Account>业务号</Account>
+			<Currency>币种</Currency>
+			<OpenDate>发卡日期</OpenDate>
+			<CreditLimitAmount>授信额度</CreditLimitAmount>
+			<GuaranteeType>担保方式</GuaranteeType>
+		</AwardCreditInfo><!--贷记卡授信情况 -->
+		<RepayInfo>
+			<StateEndDate>状态截止日</StateEndDate>
+			<StateEndMonth>状态截止月</StateEndMonth>
+			<ShareCreditLimitAmount>共享额度</ShareCreditLimitAmount>
+			<UsedCreditLimitAmount>已用额度/透支余额</UsedCreditLimitAmount>
+			<Latest6MonthUsedAvgAmount>最近6个月平均使用额度/最近6个月平均透支余额
+			</Latest6MonthUsedAvgAmount>
+			<UsedHighestAmount>最大使用额度/最大透支余额</UsedHighestAmount>
+			<ScheduledPaymentDate>账单日</ScheduledPaymentDate>
+			<ScheduledPaymentAmount>本月应还款</ScheduledPaymentAmount>
+			<ActualPaymentAmount>本月实还款</ActualPaymentAmount>
+			<RecentPayDate>最近一次还款日期</RecentPayDate>
+		</RepayInfo><!--使用/还款情况 -->
+		<CurrOverdue>
+			<CurrOverdueCyc>当前逾期期数</CurrOverdueCyc>
+			<CurrOverdueAmount>当前逾期金额</CurrOverdueAmount>
+			<Overdue31To60Amount>逾期31-60天未归还贷款本金</Overdue31To60Amount>
+			<Overdue61To90Amount>逾期61-90天未归还贷款本金</Overdue61To90Amount>
+			<Overdue91To180Amount>逾期91-180天未归还贷款本金</Overdue91To180Amount>
+			<OverdueOver180Amount>逾期180天以上未归还贷款本金</OverdueOver180Amount>
+		</CurrOverdue><!--当前逾期信息 -->
+		<Latest24MonthPaymentState>
+			<BeginMonth>起始月</BeginMonth>
+			<EndMonth>截止月</EndMonth>
+			<Latest24State>24个月还款状态</Latest24State>
+			<State>
+				<PayMonth>还款月</PayMonth>
+				<PayState>该月还款状态</PayState>
+			</State><!--还款记录明细 -->
+		</Latest24MonthPaymentState><!--最近24个月还款状态 -->
+		<Latest5YearOverdueRecord>
+			<BeginMonth>起始月</BeginMonth>
+			<EndMonth>截止月</EndMonth>
+			<OverdueRecord>
+				<Month>月份</Month>
+				<LastMonths>持续月数</LastMonths>
+				<Amount>金额</Amount>
+			</OverdueRecord><!--逾期记录明细 -->
+		</Latest5YearOverdueRecord><!--最近5年内的逾期记录 -->
+		<SpecialTrade>
+			<Type>类型</Type>
+			<GetTime>发生日期</GetTime>
+			<ChangingMonths>变更月数</ChangingMonths>
+			<ChangingAmount>发生金额</ChangingAmount>
+			<Content>明细记录</Content>
+		</SpecialTrade><!--特殊交易信息 -->
+		<BankIlluminate>
+			<Content>机构说明</Content>
+			<GetTime>添加日期</GetTime>
+		</BankIlluminate><!--与该笔业务相关的贷款机构说明 -->
+		<DissentInfo>
+			<Content>标注内容</Content>
+			<GetTime>添加日期</GetTime>
+		</DissentInfo><!--异议标注 -->
+		<AnnounceInfo>
+			<Content>声明内容</Content>
+			<GetTime>添加日期</GetTime>
+		</AnnounceInfo><!--本人声明 -->
+	</StandardLoancard><!--准贷记卡 -->
+	<GuaranteeInfo>
+		<GuaranteeFormat>担保类型</GuaranteeFormat>
+		<Guarantee>
+			<Organname>担保贷款/信用卡发放机构</Organname>
+			<ContractMoney>担保贷款合同金额/担保信用卡授信额度</ContractMoney>
+			<BeginDate>担保贷款发放日期/担保信用卡发卡日期</BeginDate>
+			<EndDate>担保贷款到期日期</EndDate>
+			<GuananteeMoney>担保金额</GuananteeMoney>
+			<GuaranteeBalance>担保贷款本金余额/担保信用卡已用额度</GuaranteeBalance>
+			<Class5State>担保贷款五级分类</Class5State>
+			<BillingDate>应还款日/账单日</BillingDate>
+		</Guarantee><!--担保信息 -->
+	</GuaranteeInfo><!--担保信息 -->
+	<TaxArrear>
+		<Organname>主管税务机关</Organname>
+		<TaxArreaAmount>欠税总额</TaxArreaAmount>
+		<Revenuedate>欠税统计日期</Revenuedate>
+	</TaxArrear><!--欠税记录 -->
+	<CivilJudgement>
+		<Court>立案法院</Court>
+		<CaseReason>案由</CaseReason>
+		<RegisterDate>立案日期</RegisterDate>
+		<ClosedType>结案方式</ClosedType>
+		<CaseResult>判决/调解结果</CaseResult>
+		<CaseValidatedate>判决/调解生效日期</CaseValidatedate>
+		<SuitObject>诉讼标的</SuitObject>
+		<SuitObjectMoney>诉讼标的金额</SuitObjectMoney>
+	</CivilJudgement><!--民事判决记录 -->
+	<ForceExecution>
+		<Court>执行法院</Court>
+		<CaseReason>执行案由</CaseReason>
+		<RegisterDate>立案日期</RegisterDate>
+		<ClosedType>结案方式</ClosedType>
+		<CaseState>案件状态</CaseState>
+		<ClosedDate>结案日期</ClosedDate>
+		<EnforceObject>申请执行标的</EnforceObject>
+		<EnforceObjectMoney>申请执行标的金额</EnforceObjectMoney>
+		<AlreadyEnforceObject>已执行标的</AlreadyEnforceObject>
+		<AlreadyEnforceObjectMoney>已执行标的金额</AlreadyEnforceObjectMoney>
+	</ForceExecution><!--强制执行记录 -->
+	<AdminPunishment>
+		<Organname>处罚机构</Organname>
+		<Content>处罚内容</Content>
+		<Money>处罚金额</Money>
+		<BeginDate>生效日期或YYYY.MM</BeginDate>
+		<EndDate>截止日期或YYYY.MM</EndDate>
+		<Result>行政复议结果</Result>
+	</AdminPunishment><!--行政处罚记录 -->
+	<AccFund>
+		<Area>参缴地</Area>
+		<RegisterDate>参缴日期</RegisterDate>
+		<FirstMonth>初缴月份</FirstMonth>
+		<ToMonth>缴至月份</ToMonth>
+		<State>缴费状态</State>
+		<Pay>月缴存额</Pay>
+		<OwnPercent>个人缴存比例</OwnPercent>
+		<ComPercent>单位缴存比例</ComPercent>
+		<Organname>缴费单位</Organname>
+		<GetTime>信息更新日期</GetTime>
+	</AccFund><!--住房公积金参缴记录 -->
+	<EndowmentInsuranceDeposit>
+		<Area>参保地</Area>
+		<RegisterDate>参保年月</RegisterDate>
+		<MonthDuration>累计缴费月数</MonthDuration>
+		<WorkDate>参加工作月份</WorkDate>
+		<State>缴费状态</State>
+		<OwnBasicMoney>个人缴费基数</OwnBasicMoney>
+		<Money>本月缴费金额</Money>
+		<Organname>缴费单位</Organname>
+		<PauseReason>中断或终止缴费原因</PauseReason>
+		<GetTime>信息更新日期</GetTime>
+	</EndowmentInsuranceDeposit><!--养老保险金缴存记录 -->
+	<EndowmentInsuranceDeliver>
+		<Area>发放地</Area>
+		<RetireType>离退休类别</RetireType>
+		<RetiredDate>离退休月份</RetiredDate>
+		<WorkDate>参加工作月份</WorkDate>
+		<Money>本月实发养老金</Money>
+		<PauseReason>停发原因</PauseReason>
+		<Organname>原单位名称</Organname>
+		<GetTime>信息更新日期</GetTime>
+	</EndowmentInsuranceDeliver><!--养老保险金发放记录 -->
+	<Salvation>
+		<PersonnelType>人员类别</PersonnelType>
+		<Area>所在地</Area>
+		<Organname>工作单位</Organname>
+		<Money>家庭月收入</Money>
+		<RegisterDate>申请日期</RegisterDate>
+		<PassDate>批准日期</PassDate>
+		<GetTime>信息更新日期</GetTime>
+	</Salvation><!--低保救助记录 -->
+	<Competence>
+		<CompetencyName>执业资格名称</CompetencyName>
+		<Grade>等级</Grade>
+		<AwardDate>获得日期</AwardDate>
+		<EndDate>到期日期</EndDate>
+		<RevokeDate>吊销日期</RevokeDate>
+		<Organname>颁发机构</Organname>
+		<Area>机构所在地</Area>
+	</Competence><!--执业资格记录 -->
+	<AdminAward>
+		<Organname>奖励机构</Organname>
+		<Content>奖励内容</Content>
+		<BeginDate>生效日期</BeginDate>
+		<EndDate>截止日期</EndDate>
+	</AdminAward><!--行政奖励记录 -->
+	<Vehicle>
+		<EngineCode>发动机号</EngineCode>
+		<LicenseCode>车牌号码</LicenseCode>
+		<Brand>品牌</Brand>
+		<CarType>车辆类型</CarType>
+		<UseCharacter>使用性质</UseCharacter>
+		<State>车辆状态</State>
+		<PledgeFlag>抵押标记</PledgeFlag>
+		<GetTime>信息更新日期</GetTime>
+	</Vehicle><!--车辆交易和抵押记录 -->
+	<TelPayment>
+		<Organname>电信运营商</Organname>
+		<Type>业务类型</Type>
+		<RegisterDate>业务开通日期</RegisterDate>
+		<State>当前缴费状态</State>
+		<ArrearMoney>当前欠费金额</ArrearMoney>
+		<ArrearMonths>当前欠费月数</ArrearMonths>
+		<Status24>最近24个月缴费状态</Status24>
+		<GetTime>记账年月</GetTime>
+	</TelPayment><!--电信缴费记录 -->
+	<AnnounceInfo>
+		<Content>声明内容</Content>
+		<GetTime>添加日期</GetTime>
+	</AnnounceInfo><!--本人声明 -->
+	<DissentInfo>
+		<Content>标注内容</Content>
+		<GetTime>添加日期</GetTime>
+	</DissentInfo><!--异议标注 -->
+	<RecordSummary>
+		<LatestMonthQueryorgSum>
+			<QueryReason>查询原因</QueryReason>
+			<Sum>数目</Sum>
+		</LatestMonthQueryorgSum><!--最近1个月内的查询机构数 -->
+		<LatestMonthQueryrecordSum>
+			<QueryReason>查询原因</QueryReason>
+			<Sum>数目</Sum>
+		</LatestMonthQueryrecordSum><!--最近1个月内的查询次数 -->
+		<TwoyearQueryrecordSum>
+			<QueryReason>查询原因</QueryReason>
+			<Sum>数目</Sum>
+		</TwoyearQueryrecordSum><!--最近2年内的查询次数 -->
+	</RecordSummary><!--查询记录汇总 -->
+	<RecordInfo>
+		<QueryReqFormat>查询申请方式</QueryReqFormat>
+		<RecordDetail>
+			<QueryDate>查询日期</QueryDate>
+			<Querier>查询操作员</Querier>
+			<QueryReason>查询原因</QueryReason>
+		</RecordDetail><!--查询记录明细 -->
+	</RecordInfo><!--查询记录明细信息 -->
+</CentralBank>
